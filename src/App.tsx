@@ -90,7 +90,7 @@ function App(): JSX.Element {
           </Navbar.Brand>
           <p className="describer">
             Не знаешь чем заняться? <br />
-            Подбирай занятие в этом сервисе
+            Подбирай занятие здесь
           </p>
         </Container>
       </nav>
