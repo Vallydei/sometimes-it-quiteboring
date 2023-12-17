@@ -31,7 +31,7 @@ function App(): JSX.Element {
 
     const translationResult = (await translationResponse.json()) as Translate;
     const data = translationResult.translatedText;
-    console.log(translationResult);
+
     func(data);
   };
 
@@ -113,21 +113,6 @@ function App(): JSX.Element {
             <br />
             <p>*{show}</p>
           </div>
-          <div>
-            {/* <div className="text">
-              <p>- Категория: {typeAct}</p>
-            </div> */}
-            {/* <div className="text">
-              <p>- Доступность: {posibility}</p>
-            </div>
-            <div className="text">
-              <p>- Затраты: {price}</p>
-            </div>
-            <div className="text">
-              {' '}
-              <p>- Кол-во участников: {show.participants}</p>
-            </div> */}
-          </div>
         </div>
         {!show ? (
           <img className="boredImg" src="/img/girlbored.webp" alt="" />
@@ -185,21 +170,6 @@ function App(): JSX.Element {
             <br />
             <p>* {activityType}</p>
           </div>
-          <div>
-            {/* <div className="text">
-              <p>- Категория: {typeAct}</p>
-            </div>
-            <div className="text">
-              <p>- Доступность: {posibility}</p>
-            </div>
-            <div className="text">
-              <p>- Затраты: {price}</p>
-            </div>
-            <div className="text">
-              {' '}
-              <p>- Кол-во участников: {show.participants}</p>
-            </div> */}
-          </div>
         </div>
         {!activityType ? (
           <img className="boredImg" src="/img/boycrying.png" alt="" />
@@ -234,21 +204,6 @@ function App(): JSX.Element {
             <p>* {participantsEng}</p>
             <br />
             <p>* {participants}</p>
-          </div>
-          <div>
-            {/* <div className="text">
-              <p>- Категория: {typeAct}</p>
-            </div>
-            <div className="text">
-              <p>- Доступность: {posibility}</p>
-            </div>
-            <div className="text">
-              <p>- Затраты: {price}</p>
-            </div>
-            <div className="text">
-              {' '}
-              <p>- Кол-во участников: {show.participants}</p>
-            </div> */}
           </div>
         </div>
         {!participants ? (

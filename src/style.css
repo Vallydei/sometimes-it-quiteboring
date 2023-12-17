@@ -1,5 +1,4 @@
 #root {
-  
   height: 100vh;
 }
 
@@ -24,16 +23,17 @@
   font-size: 18px;
   padding-top: 3px;
   text-align: right;
-
 }
 
 .navBarText {
   font-size: 34px;
   color: aliceblue;
+  transition: 0.5s;
 }
 
 .navBarText:hover {
-  font-size: 35px;
+  transform: scale(1.2);
+  transition: 0.5s;
   color: aliceblue;
 }
 
@@ -114,13 +114,6 @@
   overflow-wrap: break-word;
   hyphens: auto;
   margin-bottom: 0;
-  word-break: normal;
-}
-
-.text {
-  font-size: 16px;
-  margin-bottom: 0;
-  padding-left: 15px;
   word-break: normal;
 }
 
