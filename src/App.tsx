@@ -31,7 +31,6 @@ function App(): JSX.Element {
 
     const translationResult = (await translationResponse.json()) as Translate;
     const data = translationResult.translatedText;
-
     func(data);
   };
 
