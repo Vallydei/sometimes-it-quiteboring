@@ -109,9 +109,9 @@ function App(): JSX.Element {
         >
           <div className="activityText">
             {' '}
-            <p>*{showEng}</p>
+            <p>* {showEng}</p>
             <br />
-            <p>*{show}</p>
+            <p>* {show}</p>
           </div>
         </div>
         {!show ? (
@@ -121,8 +121,11 @@ function App(): JSX.Element {
         )}
       </div>
       <div className="smallContainer">
-        <Form name="select" onChange={(e) => void activityTypeHandler(e)}>
-          <select className="randomBtn formSelect">
+        <div>
+          <select
+            className="randomBtn formSelect"
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => void activityTypeHandler(e)}
+          >
             <option className="option" value="random">
               Подобрать категорию
             </option>
@@ -154,7 +157,7 @@ function App(): JSX.Element {
               Хлопоты
             </option>
           </select>
-        </Form>
+        </div>
         <div
           style={{
             display: 'flex',
