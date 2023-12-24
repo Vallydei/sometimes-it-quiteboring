@@ -37,7 +37,7 @@ function App(): JSX.Element {
   const showHandler = async (e: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
     e.preventDefault();
     try {
-      const res: AxiosResponse<Activity> = await axios.get('http://www.boredapi.com/api/activity/');
+      const res: AxiosResponse<Activity> = await axios.get('https://www.boredapi.com/api/activity/');
       const activity = res.data;
       setShowEng(activity.activity);
       await translator(activity, setShow);
@@ -53,7 +53,7 @@ function App(): JSX.Element {
     if (typeof +numberData.num === 'number' && +numberData.num > 0 && +numberData.num < 6) {
       try {
         const res: AxiosResponse<Activity> = await axios.get(
-          `http://www.boredapi.com/api/activity?participants=${numberData.num as string}`,
+          `https://www.boredapi.com/api/activity?participants=${numberData.num as string}`,
         );
         const activity = res.data;
         setParticipantsEng(activity.activity);
@@ -69,7 +69,7 @@ function App(): JSX.Element {
     try {
       const formData = e.target.value;
       const res: AxiosResponse<Activity> = await axios.get(
-        `http://www.boredapi.com/api/activity?type=${formData}`,
+        `https://www.boredapi.com/api/activity?type=${formData}`,
       );
       const activity = res.data;
       setactivityTypeEng(activity.activity);
