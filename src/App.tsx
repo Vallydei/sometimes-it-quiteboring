@@ -82,7 +82,7 @@ function App(): JSX.Element {
   return (
     <>
       <nav className="navBar">
-        <Container style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div className='navBarContainer'>
           <Navbar.Brand className="navBarText" href="/">
             <img className="logo" src="/elbrus.svg" alt="" />
             Мне скучно!
@@ -91,7 +91,7 @@ function App(): JSX.Element {
             Не знаешь чем заняться? <br />
             Подбирай занятие здесь
           </p>
-        </Container>
+        </div>
       </nav>
       <div className="smallContainer">
         <button className="randomBtn" onClick={(e) => void showHandler(e)} type="button">
