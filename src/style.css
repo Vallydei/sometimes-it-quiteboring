@@ -108,6 +108,16 @@
   box-shadow: rgba(191, 163, 123, 0.58) 0px 4px 8px;
 }
 
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    flex-grow: 2;
+    max-width:45%;
+
+}
+
 .activityText {
   color: white;
   font-size: 23px;
@@ -222,6 +232,9 @@ p {
   }
   p {
     font-size: 14px;
+  }
+  .textContainer {
+    max-width: 100%;
   }
   .boredImg {
     display: none;

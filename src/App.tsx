@@ -37,7 +37,9 @@ function App(): JSX.Element {
   const showHandler = async (e: React.MouseEvent<HTMLButtonElement>): Promise<void> => {
     e.preventDefault();
     try {
-      const res: AxiosResponse<Activity> = await axios.get('https://www.boredapi.com/api/activity/');
+      const res: AxiosResponse<Activity> = await axios.get(
+        'https://www.boredapi.com/api/activity/',
+      );
       const activity = res.data;
       setShowEng(activity.activity);
       await translator(activity, setShow);
@@ -82,7 +84,7 @@ function App(): JSX.Element {
   return (
     <>
       <nav className="navBar">
-        <div className='navBarContainer'>
+        <div className="navBarContainer">
           <Navbar.Brand className="navBarText" href="/">
             <img className="logo" src="/elbrus.svg" alt="" />
             Мне скучно!
@@ -93,127 +95,104 @@ function App(): JSX.Element {
           </p>
         </div>
       </nav>
-      <div className='mainContainer'><div className="smallContainer">
-        <button className="randomBtn" onClick={(e) => void showHandler(e)} type="button">
-          Подобрать рандомно
-        </button>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            paddingBottom: '5px',
-            flexGrow: '2',
-          }}
-        >
-          <div className="activityText">
-            {' '}
-            <p>* {showEng}</p>
-            <br />
-            <p>* {show}</p>
+      <div className="mainContainer">
+        <div className="smallContainer">
+          <button className="randomBtn" onClick={(e) => void showHandler(e)} type="button">
+            Подобрать рандомно
+          </button>
+          <div className="textContainer">
+            <div className="activityText">
+              {' '}
+              <p>* {showEng}</p>
+              <br />
+              <p>* {show}</p>
+            </div>
           </div>
+          {!show ? (
+            <img className="boredImg" src="/img/girlbored.webp" alt="" />
+          ) : (
+            <img className="boredImg" src="/img/girlhappy.png" alt="" />
+          )}
         </div>
-        {!show ? (
-          <img className="boredImg" src="/img/girlbored.webp" alt="" />
-        ) : (
-          <img className="boredImg" src="/img/girlhappy.png" alt="" />
-        )}
-      </div>
-      <div className="smallContainer">
-        <div>
-          <select
-            className="randomBtn formSelect"
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => void activityTypeHandler(e)}
-          >
-            <option className="option" value="random">
-              Подобрать категорию
-            </option>
-            <option className="option" value="education">
-              Образование
-            </option>
-            <option className="option" value="recreational">
-              Развлечения
-            </option>
-            <option className="option" value="social">
-              С друзьями
-            </option>
-            <option className="option" value="diy">
-              Своими руками
-            </option>
-            <option className="option" value="charity">
-              Благотворительность
-            </option>
-            <option className="option" value="cooking">
-              Кулинария
-            </option>
-            <option className="option" value="relaxation">
-              Расслабление
-            </option>
-            <option className="option" value="music">
-              Музыка
-            </option>
-            <option className="option" value="busywork">
-              Хлопоты
-            </option>
-          </select>
-        </div>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            paddingBottom: '5px',
-            flexGrow: '2',
-          }}
-        >
-          <div className="activityText" style={{}}>
-            {' '}
-            <p>* {activityTypeEng}</p>
-            <br />
-            <p>* {activityType}</p>
+        <div className="smallContainer">
+          <div>
+            <select
+              className="randomBtn formSelect"
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => void activityTypeHandler(e)}
+            >
+              <option className="option" value="random">
+                Подобрать категорию
+              </option>
+              <option className="option" value="education">
+                Образование
+              </option>
+              <option className="option" value="recreational">
+                Развлечения
+              </option>
+              <option className="option" value="social">
+                С друзьями
+              </option>
+              <option className="option" value="diy">
+                Своими руками
+              </option>
+              <option className="option" value="charity">
+                Благотворительность
+              </option>
+              <option className="option" value="cooking">
+                Кулинария
+              </option>
+              <option className="option" value="relaxation">
+                Расслабление
+              </option>
+              <option className="option" value="music">
+                Музыка
+              </option>
+              <option className="option" value="busywork">
+                Хлопоты
+              </option>
+            </select>
           </div>
-        </div>
-        {!activityType ? (
-          <img className="boredImg" src="/img/boycrying.png" alt="" />
-        ) : (
-          <img className="boredImg" src="/img/boyhappy.png" alt="" />
-        )}
-      </div>
-      <div className="smallContainer">
-        <Form className="box" onSubmit={(e) => void numberParticipantHandler(e)}>
-          <input
-            type="text"
-            name="num"
-            className="inputNum"
-            id="exampleInputPassword1"
-            placeholder="введите число от 1 до 5"
-          />
-          <Button type="submit" className="randomBtn randomBtn2">
-            Подобрать по количеству участников
-          </Button>
-        </Form>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            paddingBottom: '5px',
-            flexGrow: '2',
-          }}
-        >
-          <div className="activityText">
-            {' '}
-            <p>* {participantsEng}</p>
-            <br />
-            <p>* {participants}</p>
+          <div className="textContainer">
+            <div className="activityText" style={{}}>
+              {' '}
+              <p>* {activityTypeEng}</p>
+              <br />
+              <p>* {activityType}</p>
+            </div>
           </div>
+          {!activityType ? (
+            <img className="boredImg" src="/img/boycrying.png" alt="" />
+          ) : (
+            <img className="boredImg" src="/img/boyhappy.png" alt="" />
+          )}
         </div>
-        {!participants ? (
-          <img className="boredImg" src="/img/girlcrying.png" alt="" />
-        ) : (
-          <img className="boredImg" src="/img/girlhappyface.png" alt="" />
-        )}</div>
-      
+        <div className="smallContainer">
+          <Form className="box" onSubmit={(e) => void numberParticipantHandler(e)}>
+            <input
+              type="text"
+              name="num"
+              className="inputNum"
+              id="exampleInputPassword1"
+              placeholder="введите число от 1 до 5"
+            />
+            <Button type="submit" className="randomBtn randomBtn2">
+              Подобрать по количеству участников
+            </Button>
+          </Form>
+          <div className="textContainer">
+            <div className="activityText">
+              {' '}
+              <p>* {participantsEng}</p>
+              <br />
+              <p>* {participants}</p>
+            </div>
+          </div>
+          {!participants ? (
+            <img className="boredImg" src="/img/girlcrying.png" alt="" />
+          ) : (
+            <img className="boredImg" src="/img/girlhappyface.png" alt="" />
+          )}
+        </div>
       </div>
     </>
   );
