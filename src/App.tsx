@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { AxiosResponse } from 'axios';
 import axios from 'axios';
-import { Button, Container, Form, Navbar } from 'react-bootstrap';
+import { Button, Form, Navbar } from 'react-bootstrap';
 import './style.css';
 import type { Activity, Translate } from './types';
 
