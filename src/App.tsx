@@ -93,7 +93,7 @@ function App(): JSX.Element {
           </p>
         </div>
       </nav>
-      <div className="smallContainer">
+      <div className='mainContainer'><div className="smallContainer">
         <button className="randomBtn" onClick={(e) => void showHandler(e)} type="button">
           Подобрать рандомно
         </button>
@@ -212,7 +212,8 @@ function App(): JSX.Element {
           <img className="boredImg" src="/img/girlcrying.png" alt="" />
         ) : (
           <img className="boredImg" src="/img/girlhappyface.png" alt="" />
-        )}
+        )}</div>
+      
       </div>
     </>
   );
